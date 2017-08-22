@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821082017) do
+ActiveRecord::Schema.define(version: 20170822052402) do
 
   create_table "listings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "home_type"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20170821082017) do
     t.integer  "user_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.float    "latitude",        limit: 24
+    t.float    "longitude",       limit: 24
     t.index ["user_id"], name: "index_listings_on_user_id", using: :btree
   end
 
